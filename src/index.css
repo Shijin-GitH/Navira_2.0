@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Stargaze;
+    src: url(/assets/font/Stargaze-Stencil.woff) format("woff");
+}
+
+@theme {
+    --font-primary: Stargaze, sans-serif;
+    --color-primary: #3E745C;
+    --color-secondary: #E0F4ED;
+}
