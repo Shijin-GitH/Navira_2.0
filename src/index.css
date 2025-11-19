@@ -7,6 +7,9 @@
 
 @theme {
     --font-primary: Stargaze, sans-serif;
-    --color-primary: #3E745C;
-    --color-secondary: #E0F4ED;
+    --color-primary: #4AB0C3;
+    --color-secondary: #062B39;
+    --color-accent-1: #F3D9BF;
+    --color-accent-2: #C6E6EC;
+    --color-text: #FFFFFF;
 }
