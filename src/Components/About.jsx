@@ -26,7 +26,7 @@ function About() {
     const currentWord = words[currentWordIndex];
 
     return (
-        <div className="relative w-full h-screen text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 overflow-hidden" data-aos="fade-up" data-aos-duration="800">
+        <div className="relative w-full min-h-[60vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16" data-aos="fade-up" data-aos-delay="200">
             <style>
                 {`
                     ::-webkit-scrollbar {

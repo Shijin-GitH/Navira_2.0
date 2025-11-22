@@ -23,7 +23,6 @@ function App() {
       <h1 className='text-9xl'>NAVIRA 2.0</h1>
       <About />
       <Workshops />
-      <About />
     </div>
   )
 }
