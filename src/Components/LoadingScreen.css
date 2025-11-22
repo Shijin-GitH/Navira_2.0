@@ -1,0 +1,84 @@
+@font-face {
+    font-family: Stargaze;
+    src: url(/assets/font/Stargaze-Stencil.woff) format("woff");
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#4AB0C3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.loading-text {
+    font-family: 'Stargaze', sans-serif;
+    font-weight: 700;
+    font-size: 8vw;
+}
+
+.loading-text text {
+    stroke: #fff;
+    stroke-width: 2px;
+    fill: transparent;
+    /* Fallback values if JS hasn't run yet */
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    animation: draw-outline 3s ease-in-out infinite alternate;
+}
+
+.loader-bar {
+    width: 40%;
+    max-width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    transform: translateX(-100%);
+    animation: progress-slide 2s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes draw-outline {
+    0% {
+        stroke-dashoffset: var(--text-length, 3000);
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes progress-slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
