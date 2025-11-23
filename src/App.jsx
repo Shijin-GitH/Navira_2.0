@@ -1,6 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Hero from "./section/hero";
 import Footer from "./section/Footer";
+import About from './Components/About.jsx';
+import Workshops from './Components/Workshops.jsx';
+import LoadingScreen from './Components/LoadingScreen.jsx';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -8,9 +11,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const scrollRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (scrollRef.current) {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 7000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading && scrollRef.current) {
       ScrollTrigger.config({
         autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
       });
@@ -42,18 +54,21 @@ function App() {
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [isLoading]);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div
       ref={scrollRef}
-      className="w-screen h-screen overflow-y-auto overflow-x-hidden bg-linear-to-tr from-primary to-black"
+      className="w-screen h-screen overflow-y-auto overflow-x-hidden bg-linear-to-tr from-primary to-black text-secondary font-primary"
       style={{ margin: 0, padding: 0 }}
     >
       <Hero />
-      <div className="h-screen bg-transparent text-9xl justify-center pl-100 pt-85">
-        BLANK PAGE
-      </div>
+      <About />
+      <Workshops />
       <Footer />
     </div>
   );
