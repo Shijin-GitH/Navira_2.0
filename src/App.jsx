@@ -50,7 +50,9 @@ function App() {
       className="w-screen h-screen overflow-y-auto overflow-x-hidden bg-linear-to-tr from-primary to-black"
       style={{ margin: 0, padding: 0 }}
     >
-      <Hero />
+      <div id="hero">
+        <Hero />
+      </div>
       <div className="h-screen bg-transparent text-9xl justify-center pl-100 pt-85">
         BLANK PAGE
       </div>
