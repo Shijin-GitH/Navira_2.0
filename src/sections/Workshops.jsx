@@ -66,7 +66,7 @@ function Workshops() {
 
   return (
     <>
-      <section className="w-full section-bg-enhanced">
+      <section className="w-full ">
         <div className="w-[90vw] max-w-7xl m-auto text-white py-20">
           <h1 className="text-5xl text-center md:text-left md:text-7xl text-white mb-20 font-primary">
             Workshops

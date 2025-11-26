@@ -65,16 +65,17 @@ function App() {
   return (
     <div
       ref={scrollRef}
-      className="w-screen h-screen overflow-y-auto overflow-x-hidden bg-linear-to-tr from-primary to-black"
-      style={{ margin: 0, padding: 0 }}
-    >
+      className="w-screen h-screen overflow-y-auto overflow-x-hidden"
+      style={{ margin: 0, padding: 0 }}>
       <div id="hero">
         <Hero />
       </div>
-      <About />
-      <WhyNavira />
-      <Workshops />
-      <IndustrialVisits />
+      <div className="flex flex-col gap-10 bg-secondary">
+        <About />
+        <WhyNavira />
+        <Workshops />
+        <IndustrialVisits />
+      </div>
       <Footer />
     </div>
   );

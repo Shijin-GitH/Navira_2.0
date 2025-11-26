@@ -25,7 +25,7 @@ function About() {
   const currentWord = words[currentWordIndex];
 
   return (
-    <div className="relative w-full min-h-[60vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 section-bg-enhanced">
+    <div className="relative w-full min-h-[60vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 ">
       {/* Title Section */}
       <div className="relative z-20 w-full max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16 flex justify-center md:justify-start items-center">
         <div className="flex flex-row items-center gap-2 sm:gap-4">
