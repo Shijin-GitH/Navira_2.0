@@ -65,7 +65,7 @@ function App() {
   return (
     <div
       ref={scrollRef}
-      className="w-screen h-screen overflow-y-auto overflow-x-hidden bg-linear-to-tr from-primary to-black text-secondary font-primary"
+      className="w-screen h-screen overflow-y-auto overflow-x-hidden bg-linear-to-tr from-primary to-black"
       style={{ margin: 0, padding: 0 }}
     >
       <div id="hero">
