@@ -26,7 +26,7 @@ export default function IndustrialVisits() {
   };
 
   return (
-    <section className="py-8 md:py-16 bg-secondary">
+    <section className="py-8 md:py-16 section-bg-enhanced">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">

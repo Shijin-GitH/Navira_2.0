@@ -77,7 +77,7 @@ function Workshops() {
                 }
             `}
       </style>
-      <section className="w-full bg-secondary">
+      <section className="w-full section-bg-enhanced">
         <div className="w-[90vw] max-w-7xl m-auto text-white py-20">
           <h1 className="text-5xl text-center md:text-left md:text-7xl text-white mb-20 font-primary">
             Workshops

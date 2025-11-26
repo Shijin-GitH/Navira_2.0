@@ -1,16 +1,54 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: Stargaze;
-    src: url(/assets/font/Stargaze-Stencil.woff) format("woff");
+  font-family: Stargaze;
+  src: url(/assets/font/Stargaze-Stencil.woff) format("woff");
 }
 
 @theme {
-    --font-primary: Stargaze, sans-serif;
-    --color-primary: #4AB0C3;
-    --color-secondary: #062B39;
-    --color-accent-1: #F3D9BF;
-    --color-accent-2: #C6E6EC;
-    --color-text: #FFFFFF;
+  --font-primary: Stargaze, sans-serif;
+  --color-primary: #4ab0c3;
+  --color-secondary: #062b39;
+  --color-accent-1: #f3d9bf;
+  --color-accent-2: #c6e6ec;
+  --color-text: #ffffff;
 }
 
+/* Enhanced Section Background - Seamless */
+.section-bg-enhanced {
+  background: 
+    /* Subtle radial gradient overlay - no darkening at edges */ radial-gradient(
+      ellipse at 50% 30%,
+      rgba(74, 176, 195, 0.06) 0%,
+      transparent 60%
+    ),
+    /* Dot pattern */
+      radial-gradient(
+        circle at 20px 20px,
+        rgba(74, 176, 195, 0.12) 1px,
+        transparent 1px
+      ),
+    /* Base color */ #062b39;
+  background-size: 100% 100%, 40px 40px, 100% 100%;
+  position: relative;
+}
+
+.section-bg-enhanced::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Lighter diagonal gradient without edge darkening */
+  background: linear-gradient(
+    135deg,
+    rgba(74, 176, 195, 0.03) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content is above the overlay */
+.section-bg-enhanced > * {
+  position: relative;
+  z-index: 1;
+}

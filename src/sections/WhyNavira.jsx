@@ -118,7 +118,7 @@ export default function WhyNavira() {
   const imageSrc = "/assets/iv/sample.webp";
 
   return (
-    <section className="w-full bg-secondary text-white px-6 md:px-16 py-16 overflow-hidden">
+    <section className="w-full section-bg-enhanced text-white px-6 md:px-16 py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-snug text-center">
           Why <span className="text-primary">Navira</span>?
