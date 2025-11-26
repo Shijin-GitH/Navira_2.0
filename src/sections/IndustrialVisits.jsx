@@ -26,24 +26,24 @@ export default function IndustrialVisits() {
   };
 
   return (
-    <section className="py-8 md:py-16 bg-gradient-to-br from-[#062B39] to-[#0A4A5F]">
+    <section className="py-8 md:py-16 bg-secondary">
       <div className="max-w-6xl mx-auto px-4">
-        
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4">
-            Industrial <span className="text-[#4AB0C3]">Visits</span>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-3 md:mb-4 font-primary">
+            Industrial <span className="text-primary">Visits</span>
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-[#C6E6EC] max-w-2xl mx-auto px-2">
-            Hands-on learning experiences that bridge the gap between theoretical knowledge and real-world applications
+          <p className="text-sm md:text-base lg:text-lg text-accent-2 max-w-2xl mx-auto px-2">
+            Hands-on learning experiences that bridge the gap between
+            theoretical knowledge and real-world applications
           </p>
         </div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 justify-items-center">
           {visits.map((visit, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="relative w-full max-w-[320px] mb-6 md:mb-0 cursor-pointer md:cursor-auto"
               onClick={() => toggleCard(index)}
             >
@@ -51,12 +51,12 @@ export default function IndustrialVisits() {
               <div className="absolute inset-0 bg-[#0A3A4F] rounded-[20px] shadow-xl md:shadow-2xl"></div>
 
               {/* INNER BORDER SHAPE */}
-              <div className="absolute inset-1 border-4 border-[#4AB0C3] rounded-[16px]"></div>
+              <div className="absolute inset-1 border-4 border-primary rounded-[16px]"></div>
 
               {/* RECTANGULAR IMAGE */}
               <div className="relative z-10 flex justify-center -mt-8 md:-mt-10 mb-4">
                 <div className="w-full max-w-[280px] h-48 md:h-56 bg-[#0A3A4F] rounded-xl p-1 shadow-lg md:shadow-xl">
-                  <div className="w-full h-full border-4 border-[#4AB0C3] rounded-lg overflow-hidden">
+                  <div className="w-full h-full border-4 border-primary rounded-lg overflow-hidden">
                     <img
                       src={visit.img}
                       alt={visit.title}
@@ -74,23 +74,31 @@ export default function IndustrialVisits() {
               </div>
 
               {/* DESCRIPTION BOX - Hidden on mobile by default, shown on click */}
-              <div className={`
+              <div
+                className={`
                 relative z-10 px-4 pb-6 text-center transition-all duration-300
                 md:flex md:flex-col md:justify-center
-                ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}
+                ${
+                  openIndex === index
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0 overflow-hidden"
+                }
                 md:max-h-96 md:opacity-100
-              `}>
-                <p className="text-sm md:text-base text-[#C6E6EC] leading-relaxed">
+              `}
+              >
+                <p className="text-sm md:text-base text-accent-2 leading-relaxed">
                   {visit.desc}
                 </p>
               </div>
 
               {/* Mobile Tap Indicator */}
-              <div className={`
-                md:hidden text-center text-xs text-[#4AB0C3] mt-2 transition-opacity duration-300
-                ${openIndex === index ? 'opacity-0' : 'opacity-100'}
-              `}>
-                Tap to {openIndex === index ? 'close' : 'read more'}
+              <div
+                className={`
+                md:hidden text-center text-xs text-primary mt-2 transition-opacity duration-300
+                ${openIndex === index ? "opacity-0" : "opacity-100"}
+              `}
+              >
+                Tap to {openIndex === index ? "close" : "read more"}
               </div>
             </div>
           ))}

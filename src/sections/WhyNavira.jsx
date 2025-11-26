@@ -2,18 +2,16 @@ import React from "react";
 
 function FeatureCard({ feature, roundedCorners }) {
   return (
-    <div
-      className={`bg-[#062B39] p-4 border border-[#4AB0C3] ${roundedCorners}`}
-    >
+    <div className={`bg-secondary p-4 border border-primary ${roundedCorners}`}>
       <div className="flex items-start space-x-2">
-        <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+        <div className="shrink-0 w-6 h-6 flex items-center justify-center">
           {feature.icon}
         </div>
         <div>
           <h3 className="text-lg md:text-xl font-bold mb-1 text-white leading-snug">
             {feature.title}
           </h3>
-          <p className="text-[#C6E6EC] text-sm md:text-base leading-snug">
+          <p className="text-accent-2 text-sm md:text-base leading-snug">
             {feature.description}
           </p>
         </div>
@@ -31,7 +29,7 @@ export default function WhyNavira() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 text-[#4AB0C3]"
+          className="w-5 h-5 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -52,7 +50,7 @@ export default function WhyNavira() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 text-[#4AB0C3]"
+          className="w-5 h-5 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -73,7 +71,7 @@ export default function WhyNavira() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 text-[#4AB0C3]"
+          className="w-5 h-5 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -94,7 +92,7 @@ export default function WhyNavira() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 text-[#4AB0C3]"
+          className="w-5 h-5 text-primary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -113,20 +111,21 @@ export default function WhyNavira() {
   const roundedClasses = [
     "rounded-tr-xl rounded-br-xl rounded-bl-xl", // top-left
     "rounded-tl-xl rounded-bl-xl rounded-br-xl", // top-right
-    "rounded-tl-xl rounded-tr-xl rounded-br-xl", // bottom-left 
+    "rounded-tl-xl rounded-tr-xl rounded-br-xl", // bottom-left
     "rounded-tl-xl rounded-tr-xl rounded-bl-xl", // bottom-right
   ];
 
   const imageSrc = "/assets/iv/sample.webp";
 
   return (
-    <section className="w-full bg-[#062B39] text-white px-6 md:px-16 py-16 overflow-hidden">
+    <section className="w-full bg-secondary text-white px-6 md:px-16 py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-snug text-center">
-          Why <span className="text-[#4AB0C3]">Navira</span>?
+          Why <span className="text-primary">Navira</span>?
         </h2>
-        <p className="text-base md:text-lg text-[#C6E6EC] max-w-3xl leading-snug mb-8 text-center mx-auto">
-          Navira offers exciting activities beyond workshops, providing a rich learning and networking experience.
+        <p className="text-base md:text-lg text-accent-2 max-w-3xl leading-snug mb-8 text-center mx-auto">
+          Navira offers exciting activities beyond workshops, providing a rich
+          learning and networking experience.
         </p>
 
         <div className="flex flex-col lg:flex-row items-start gap-8">
