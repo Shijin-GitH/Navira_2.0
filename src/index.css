@@ -1,13 +1,17 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Dancing+Script:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import "tailwindcss";
 
 @font-face {
   font-family: Stargaze;
   src: url(/assets/font/Stargaze-Stencil.woff) format("woff");
 }
 
+
+
 @theme {
   --font-primary: Stargaze, sans-serif;
+  --font-teko: "Teko", sans-serif;
   --font-script: "Dancing Script", cursive;
   --font-oswald: "Oswald", sans-serif;
   --color-primary: #4ab0c3;
@@ -62,4 +66,26 @@
 html {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
