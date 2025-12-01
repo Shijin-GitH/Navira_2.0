@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Heading from "../components/Heading";
 
 const workshopsData = [
   {
@@ -67,10 +68,8 @@ function Workshops() {
   return (
     <>
       <section className="w-full ">
-        <div className="w-[90vw] max-w-7xl m-auto text-white py-20">
-          <h1 className="text-5xl text-center md:text-left md:text-7xl text-white mb-20 font-primary">
-            Workshops
-          </h1>
+        <div className="w-[90vw] max-w-7xl flex-col flex gap-10 m-auto text-white py-20">
+         <Heading mainTitle="Workshops" highlightedTitle="" />
           <div
             className="flex flex-col md:flex-row w-full gap-8 justify-center"
             onMouseMove={handleMouseMove}

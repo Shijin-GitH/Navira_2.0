@@ -10,6 +10,7 @@ import Countdown from "./sections/Countdown.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Glimpse from "./sections/Glimpse.jsx";
+import Organizer from "./sections/Organizer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,6 +78,7 @@ function App() {
         <About />
         <Glimpse />
         <WhyNavira />
+        <Organizer />
         <Workshops />
         <IndustrialVisits />
       </div>

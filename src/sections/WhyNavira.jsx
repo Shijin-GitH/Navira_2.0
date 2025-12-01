@@ -1,153 +1,59 @@
-import React from "react";
-
-function FeatureCard({ feature, roundedCorners }) {
-  return (
-    <div className={`bg-secondary p-4 border border-primary ${roundedCorners}`}>
-      <div className="flex items-start space-x-2">
-        <div className="shrink-0 w-6 h-6 flex items-center justify-center">
-          {feature.icon}
-        </div>
-        <div>
-          <h3 className="text-lg md:text-xl font-bold mb-1 text-white leading-snug">
-            {feature.title}
-          </h3>
-          <p className="text-accent-2 text-sm md:text-base leading-snug">
-            {feature.description}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+import Heading from "../components/Heading";
 
 export default function WhyNavira() {
-  const features = [
-    {
-      title: "Group Discussion",
-      description:
-        "Network and communicate through a professional GD session—an extraordinary platform to explore and express intellect.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 text-primary"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17 20h5v-2a3 3 0 00-3-3h-2m-6 5v-4a3 3 0 013-3h4a3 3 0 013 3v4M7 20h5v-4a3 3 0 00-3-3H7a3 3 0 00-3 3v4h3z"
-          />
-        </svg>
-      ),
-    },
+  const Data = [
     {
       title: "Startup Mentoring",
-      description:
-        "A dynamic mentoring session with an expert entrepreneur providing insights, strategies, and real-world startup guidance.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 text-primary"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 12l9-5-9-5-9 5 9 5z M12 12v10 M12 12l-9-5"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Culturals",
-      description:
-        "An evening filled with cultural performances and vibrant celebrations.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 text-primary"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4M7 7h10v10H7V7z"
-          />
-        </svg>
-      ),
+      description: `A dynamic startup mentoring session with an expert entrepreneur.
+      Unlock insights, strategies, and real-world tips to fuel your
+      business dreams. Don’t miss this opportunity to elevate your startup
+      journey!c`,
+      style: "h-120",
+      contentStyle: "h-2/3",
     },
     {
       title: "Industrial Visits",
       description:
-        "Experience behind-the-scenes innovation: KSEB substation, Kerala Water Authority, and ASAP Kunnamthanam.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5 text-primary"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 21v-6h18v6H3z M3 3h18v12H3V3z"
-          />
-        </svg>
-      ),
+        "Takes you behind the scenes of innovation with visits to the KSEB substation, Kerala Water Authority, and ASAP Kunnamthanam—exploring power, sustainability, and skill development!",
+      style: "h-80",
+      contentStyle: "h-2/3",
+    },
+    {
+      title: "Culturals",
+      description:
+        "Adding to the mesmerizing experience of Navira, indulge in an evening of culturals with refreshing performances and exquisite celebrations.",
+      style: "h-80",
+      contentStyle: "h-2/3",
+    },
+    {
+      title: "Group Discussion",
+      description:
+        "Navira brings a great opportunity for participants to network and communicate with each other through the Group Discussion Session handled by skilled professionals.",
+      style: "h-120",
+      contentStyle: "h-2/3",
     },
   ];
 
-  const roundedClasses = [
-    "rounded-tr-xl rounded-br-xl rounded-bl-xl", // top-left
-    "rounded-tl-xl rounded-bl-xl rounded-br-xl", // top-right
-    "rounded-tl-xl rounded-tr-xl rounded-br-xl", // bottom-left
-    "rounded-tl-xl rounded-tr-xl rounded-bl-xl", // bottom-right
-  ];
-
-  const imageSrc = "/assets/iv/sample.webp";
-
   return (
-    <section className="w-full  text-white px-6 md:px-16 py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-snug text-center">
-          Why <span className="text-primary">Navira</span>?
-        </h2>
-        <p className="text-base md:text-lg text-accent-2 max-w-3xl leading-snug mb-8 text-center mx-auto">
-          Navira offers exciting activities beyond workshops, providing a rich
-          learning and networking experience.
+    <div className="flex flex-col lg:flex-row gap-3 items-center justify-center text-white py-20">
+      <div className="flex flex-col p-8 lg:p-10 ">
+        <Heading mainTitle="Why" highlightedTitle="Navira?" />
+        <p className="md:w-120 text-center">
+          Navira comes with alot of exciting activities apart from the
+          workshops.
         </p>
-
-        <div className="flex flex-col lg:flex-row items-start gap-8">
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full lg:w-1/2">
-            {features.map((feature, index) => (
-              <FeatureCard
-                key={index}
-                feature={feature}
-                roundedCorners={roundedClasses[index]}
-              />
-            ))}
-          </div>
-
-          <div className="w-full lg:w-1/2">
-            <img
-              src={imageSrc}
-              alt="Navira"
-              className="w-full h-auto rounded-xl shadow-2xl object-cover"
-            />
-          </div>
-        </div>
       </div>
-    </section>
+      <div className="grid grid-cols-1 sm:grid-cols-2  gap-4  px-8 lg:px-8 justify-items-center items-center w-fit ">
+        {Data.map((item, index) => (
+          <div key={index} className={`size-70 bg-primary rounded-xl p-8 relative sm:even:top-10`}>
+            <div
+              className={`flex flex-col `}>
+              <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
+              <p className="text-sm">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
