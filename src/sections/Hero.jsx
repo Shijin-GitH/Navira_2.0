@@ -17,7 +17,7 @@ function Hero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(leftHillRef.current, { y: 100, scale: 1.1 });
-      gsap.set(rightSBRef.current, { y: 100, scale: 1.1 });
+      gsap.set(rightSBRef.current, { y: 100, scale: 1.1, scaleY: 1 });
       gsap.set(cut5Ref.current, { scale: 1.1 });
       gsap.set(moonRef.current, { y: 0, scale: 1 });
       gsap.set(cloudRef.current, { x: 0, opacity: 0.6 });
@@ -82,8 +82,9 @@ function Hero() {
 
       gsap.to(rightSBRef.current, {
         y: 300,
-        x: 100,
+        x: -100,
         scale: 1.2,
+        scaleY: 1,
         ease: "none",
         scrollTrigger: {
           trigger: heroRef.current,
@@ -193,17 +194,22 @@ function Hero() {
       />
 
       {/*right hill */}
-      <img
-        ref={rightSBRef}
-        src="/assets/parallax/right s&b.svg"
-        alt="Right Hill"
+      <div
         className="absolute bottom-0 right-0 h-[300px] sm:h-[380px] md:h-[450px] lg:h-[550px] w-auto z-10 pointer-events-none will-change-transform"
-        style={{ filter: "drop-shadow(-10px 0 20px rgba(0,0,0,0.3))" }}
-      />
+        style={{ transform: "scaleX(-1)" }}
+      >
+        <img
+          ref={rightSBRef}
+          src="/assets/parallax/left_hill.svg"
+          alt="Right Hill"
+          style={{ filter: "drop-shadow(-10px 0 20px rgba(0,0,0,0.3))" }}
+          className="h-full w-auto"
+        />
+      </div>
 
       <img
         ref={leftHillRef}
-        src="/assets/parallax/left side hill.svg"
+        src="/assets/parallax/left_hill.svg"
         alt="Left Hill"
         className="absolute bottom-0 left-0 h-[280px] sm:h-[350px] md:h-[430px] lg:h-[500px] w-auto z-10 pointer-events-none will-change-transform"
         style={{ filter: "drop-shadow(10px 0 20px rgba(0,0,0,0.3))" }}
@@ -211,30 +217,18 @@ function Hero() {
 
       <div
         ref={contentRef}
-        className="relative z-20 flex flex-col items-center max-w-full px-4 mt-[-50px]"
+        className="relative z-20 flex flex-col items-center justify-center h-full w-full max-w-full px-4"
       >
-        <h1
-          className="text-5xl sm:text-7xl md:text-9xl font-primary tracking-widest 
-          text-white drop-shadow-[0_0_30px_rgba(74,176,195,0.6)]"
-          style={{ letterSpacing: "0.1em" }}
-        >
-          NAVIRA 2.0
-        </h1>
-        <p className="text-accent-2 text-lg sm:text-2xl md:text-3xl mt-4 tracking-[0.2em] font-light uppercase">
-          Journey Beyond Limits
-        </p>
-
-        <button
-          className="mt-10 px-10 py-4 rounded-full font-bold text-sm md:text-base tracking-[0.2em]
-          bg-primary text-secondary uppercase
-          shadow-[0_0_30px_rgba(74,176,195,0.4)] 
-          hover:shadow-[0_0_50px_rgba(74,176,195,0.7)]
-          hover:scale-105 hover:bg-white hover:text-secondary
-          transition-all duration-300 ease-out
-          active:scale-95"
-        >
-          Register Now
-        </button>
+        <div className="flex flex-col items-center gap-8">
+          <img
+            src="/assets/logos/navira.webp"
+            className="w-full max-w-xs md:max-w-md lg:max-w-2xl"
+            alt="Navira logo"
+          />
+          <button className="cursor-pointer rounded-xl px-8 py-4 text-xl md:text-2xl font-primary text-white hover:bg-secondary hover:scale-95 transition duration-300 ease-in-out z-50 bg-primary">
+            Register Now
+          </button>
+        </div>
       </div>
     </section>
   );

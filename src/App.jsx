@@ -9,6 +9,20 @@ import WhyNavira from "./sections/WhyNavira";
 import Countdown from "./sections/Countdown.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import StaggeredMenu from "./components/Navbar.jsx";
+
+const menuItems = [
+  { label: "Home", ariaLabel: "Go to home page", link: "/" },
+  { label: "About", ariaLabel: "Learn about us", link: "/about" },
+  { label: "Services", ariaLabel: "View our services", link: "/services" },
+  { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
+];
+
+const socialItems = [
+  { label: "Twitter", link: "https://twitter.com" },
+  { label: "GitHub", link: "https://github.com" },
+  { label: "LinkedIn", link: "https://linkedin.com" },
+];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +81,24 @@ function App() {
     <div
       ref={scrollRef}
       className="w-screen h-screen overflow-y-auto overflow-x-hidden"
-      style={{ margin: 0, padding: 0 }}>
+      style={{ margin: 0, padding: 0 }}
+    >
+      <StaggeredMenu
+        position="right"
+        items={menuItems}
+        socialItems={socialItems}
+        displaySocials={true}
+        displayItemNumbering={true}
+        menuButtonColor="#fff"
+        openMenuButtonColor="#fff"
+        changeMenuColorOnOpen={true}
+        colors={["#B19EEF", "#5227FF"]}
+        logoUrl="/assets/logos/navira_logo.webp"
+        accentColor="#ff6b6b"
+        onMenuOpen={() => console.log("Menu opened")}
+        onMenuClose={() => console.log("Menu closed")}
+        isFixed={true}
+      />
       <div id="hero">
         <Hero />
       </div>
