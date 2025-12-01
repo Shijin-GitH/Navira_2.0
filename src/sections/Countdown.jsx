@@ -39,12 +39,18 @@ export default function Countdown() {
   const pad2 = (n) => String(n).padStart(2, "0");
 
   return (
-    <section className="px-4 py-8">
-      <div className="text-center">
-        <h2 className="text-4xl text-primary font-primary  font-semibold tracking-tight mb-24">
+    <section className="px-4 py-20 flex items-center justify-center relative">
+      <div className="text-center flex flex-col items-center justify-center gap-14 ">
+        <span className="w-full h-0.5 top-[58%] bg-accent-1/70 absolute"></span>
+        <span className="w-full h-0.5 top-[64%] bg-accent-1/70 absolute"></span>
+        <span className="size-30 rounded-full border border-accent-1 absolute -left-15 bg-secondary top-[54%] sm:top-[50%] lg:top-[45%]"></span>
+        <span className="size-20 rounded-full border border-accent-1 absolute -left-10 bg-secondary top-[56.5%] sm:top-[54%] lg:top-[51%]"></span>
+        <span className="size-30 rounded-full border border-accent-1 absolute -right-15 bg-secondary top-[54%] sm:top-[50%] lg:top-[45%]"></span>
+        <span className="size-20 rounded-full border border-accent-1 absolute -right-10 bg-secondary top-[56.5%] sm:top-[54%] lg:top-[51%]"></span>
+        <h2 className="text-4xl text-primary font-primary  font-semibold tracking-tight">
           EVENT STARTS IN
         </h2>
-        <div className="inline-flex items-center gap-4 sm:gap-16 font-teko">
+        <div className="inline-flex items-center gap-4 justify-center sm:gap-16 font-teko flex-col sm:flex-row sm:flex-wrap">
           <TimeBox label="Days" value={String(days)} />
           <Separator />
           <TimeBox label="Hours" value={pad2(hours)} />
@@ -63,12 +69,12 @@ export default function Countdown() {
 
 function TimeBox({ label, value }) {
   return (
-    <div className=" text-center flex relative  items-center justify-center ">
+    <div className=" text-center flex relative  items-center justify-center bg-secondary ">
       <div className="text-8xl z-10 text-primary font-semibold leading-none">
         {value}
       </div>
       {/* <span className="size-90 z-0 rounded-full bg-primary/30 absolute -right-30 top-20"></span> */}
-      <div className="mt-1 text-4xl text-accent-1 absolute bottom-0  uppercase left-[125%] origin-left -rotate-90">{label}</div>
+      <div className="mt-1 text-4xl text-accent-1 absolute bottom-0  uppercase left-[125%] origin-left -rotate-90 bg-secondary">{label}</div>
     </div>
   );
 }
