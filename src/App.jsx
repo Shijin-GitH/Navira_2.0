@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Glimpse from "./sections/Glimpse.jsx";
 import Organizer from "./sections/Organizer.jsx";
 import StaggeredMenu from "./components/Navbar.jsx";
+import Register from "./sections/Register.jsx";
 
 const menuItems = [
   { label: "Home", ariaLabel: "Go to home page", link: "/" },
@@ -110,6 +111,7 @@ function App() {
         <Glimpse />
         <WhyNavira />
         <Organizer />
+        <Register />
         <Workshops />
         <IndustrialVisits />
       </div>
