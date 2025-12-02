@@ -18,6 +18,7 @@ export const StaggeredMenu = ({
   closeOnClickAway = true,
   onMenuOpen,
   onMenuClose,
+  onItemClick,
 }) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
@@ -336,6 +337,7 @@ export const StaggeredMenu = ({
   }, []);
 
   const toggleMenu = useCallback(() => {
+    if (busyRef.current) return;
     const target = !openRef.current;
     openRef.current = target;
     setOpen(target);
@@ -431,7 +433,7 @@ export const StaggeredMenu = ({
         </div>
 
         <header
-          className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
+          className="staggered-menu-header  absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
           aria-label="Main navigation header"
         >
           <div
@@ -497,7 +499,7 @@ export const StaggeredMenu = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel absolute top-0 right-0 h-full bg-secondary flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]"
+          className="staggered-menu-panel pointer-events-auto absolute top-0 right-0 h-full bg-secondary flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]"
           style={{ WebkitBackdropFilter: "blur(12px)" }}
           aria-hidden={!open}
         >

@@ -44,7 +44,7 @@ function App() {
   const menuRef = useRef(null);
 
   const handleNavClick = (link) => {
-    gsap.to(scrollRef.current, {
+    gsap.to(window, {
       duration: 1.5,
       scrollTo: { y: link, offsetY: 70 },
       ease: "power4.inOut",
@@ -109,21 +109,10 @@ function App() {
     >
       <StaggeredMenu
         ref={menuRef}
-        position="right"
         items={menuItems}
         socialItems={socialItems}
-        displaySocials={true}
-        displayItemNumbering={true}
-        menuButtonColor="#fff"
-        openMenuButtonColor="#fff"
-        changeMenuColorOnOpen={true}
-        colors={["#B19EEF", "#5227FF"]}
-        logoUrl="/assets/logos/navira_logo.webp"
-        accentColor="#ff6b6b"
-        onMenuOpen={() => console.log("Menu opened")}
-        onMenuClose={() => console.log("Menu closed")}
+        onItemClick={handleNavClick}
         isFixed={true}
-        onNavItemClick={handleNavClick}
       />
       <div id="hero">
         <Hero />

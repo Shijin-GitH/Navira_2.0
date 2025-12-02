@@ -146,7 +146,7 @@ function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className="w-full h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6
+      className="w-full select-none h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6
       bg-linear-to-br from-secondary via-[#0A3D4F] to-secondary relative overflow-hidden"
       style={{ perspective: "1000px" }}
     >
