@@ -17,7 +17,6 @@ import Sponsors from "./sections/Sponsors.jsx";
 import Aos from "aos";
 import EventDetails from "./sections/EventDetails.jsx";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import Particles from "./components/Particles.jsx";
 // import "aos/dist/aos.css";
 
 const menuItems = [
