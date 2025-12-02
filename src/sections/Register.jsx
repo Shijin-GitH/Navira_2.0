@@ -6,20 +6,20 @@ export default function Register() {
   const TIcketDetails = [
     {
       category: "IEEE WIE/IAS Members",
-      price: 800,
-      earlyprices: 600,
+      price: 549,
+      earlyprices: 849,
       registerLink: "https://ieeewie.org/membership"
     },
     {
       category: "IEEE Members",
-      price: 1000,
-      earlyprices: 800,
+      price: 969,
+      earlyprices: 669,
       registerLink: "https://ieeewie.org/membership"
     },
     {
       category: "Non-IEEE Members",
-      price: 1200,
-      earlyprices: 1000,
+      price: 1289,
+      earlyprices: 919,
       registerLink: "https://ieeewie.org/membership"
     },
   ];

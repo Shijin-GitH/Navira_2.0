@@ -42,46 +42,36 @@ const workshopsData = [
 
 function Workshops() {
   const [selectedWorkshop, setSelectedWorkshop] = useState(null);
-  const cardsRef = useRef([]);
 
   const handleMouseMove = (e) => {
-    cardsRef.current.forEach((card) => {
-      if (!card) return;
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-      card.style.setProperty("--mouse-x", `${x}px`);
-      card.style.setProperty("--mouse-y", `${y}px`);
-    });
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
   };
 
-  const handleMouseLeave = () => {
-    cardsRef.current.forEach((card) => {
-      if (!card) return;
-      // Set mouse position far outside the card to hide the glow
-      card.style.setProperty("--mouse-x", `-9999px`);
-      card.style.setProperty("--mouse-y", `-9999px`);
-    });
+  const handleMouseLeave = (e) => {
+    const card = e.currentTarget;
+    card.style.setProperty("--mouse-x", `-9999px`);
+    card.style.setProperty("--mouse-y", `-9999px`);
   };
 
   return (
     <>
       <section className="w-full ">
         <div className="w-[90vw] max-w-7xl flex-col flex gap-10 m-auto text-white py-20">
-         <Heading mainTitle="Workshops" highlightedTitle="" />
-          <div
-            className="flex flex-col md:flex-row w-full gap-8 justify-center"
-            
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
+          <Heading mainTitle="Workshops" highlightedTitle="" />
+          <div className="flex flex-col md:flex-row w-full gap-8 justify-center">
             {workshopsData.map((workshop, index) => (
               <div
                 key={workshop.id}
                 data-aos="fade-up"
                 data-aos-delay={`${index * 100}`}
-                ref={(el) => (cardsRef.current[index] = el)}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
                 className="group relative w-[70%] md:w-1/3 h-[75vw] md:h-[30vw] m-auto md:m-0 rounded-xl md:rounded-3xl overflow-hidden cursor-pointer border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,255,255,0.15)] hover:border-white/40 active:shadow-[0_0_50px_rgba(255,255,255,0.15)] active:border-white/40"
                 onClick={() => setSelectedWorkshop(workshop)}
               >
@@ -127,7 +117,7 @@ function Workshops() {
                           fill="white"
                           className="text-[10px] font-bold uppercase tracking-widest"
                         >
-                          Read More Details • Read More Details •
+                          Click to Read More • Click to Read More •
                         </textPath>
                       </text>
                     </svg>
@@ -169,20 +159,21 @@ function Workshops() {
       {/* Modal */}
       {selectedWorkshop && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-xl p-4 transition-all duration-300"
+          className="fixed inset-0 z-50 flex items-center backdrop-blur-lg justify-center bg-linear-to-br from-black/20 to-secondary p-4 transition-all duration-300"
           onClick={() => setSelectedWorkshop(null)}
         >
           <div
-            className="bg-[#0a0a0a] border border-white/10 rounded-2xl md:rounded-3xl w-[80vw] h-[70vh] md:w-full md:max-w-6xl md:h-auto md:max-h-[90vh] text-white relative shadow-2xl overflow-y-auto animate-[fadeIn_0.3s_ease-out] no-scrollbar"
+            className="border backdrop-blur-3xl bg-linear-to-tl from-black to-secondary border-accent-1 rounded-2xl md:rounded-3xl w-[80vw] h-[70vh] md:w-full md:max-w-4xl md:h-auto md:max-h-[90vh] text-white relative shadow-2xl overflow-hidden animate-[fadeIn_0.3s_ease-out]"
             onClick={(e) => e.stopPropagation()}
           >
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-primary/10 opacity-50 pointer-events-none" />
             <button
-              className="absolute top-2 md:top-8 right-2 md:right-8 text-white/50 hover:text-white transition-colors duration-300 z-20 w-8 h-8 flex items-center justify-center"
+              className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors duration-300 z-20"
               onClick={() => setSelectedWorkshop(null)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 md:h-8 w-6 md:w-8"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -196,48 +187,44 @@ function Workshops() {
               </svg>
             </button>
 
-            <div className="flex flex-col md:flex-row">
-              {/* Left Part (2/5) */}
-              <div className="w-full md:w-2/5 bg-white/5 p-3 md:p-8 flex flex-col gap-3 md:gap-6 md:border-r border-white/10">
-                {/* Top: Image */}
-                <div className="w-32 h-32 md:w-full md:h-auto md:aspect-square rounded-xl md:rounded-2xl overflow-hidden bg-gray-800 mx-auto md:mx-0">
+            <div className="flex flex-col md:flex-row h-full">
+              {/* Left Part */}
+              <div className="w-full md:w-1/3 p-6 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-white/10">
+                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-2 ring-primary/50 mb-4">
                   <img
                     src={selectedWorkshop.speakerImage}
                     alt={selectedWorkshop.speakerName}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Bottom: Info */}
-                <div className="flex flex-col gap-1 md:gap-2 text-center md:text-left">
-                  <h3 className="text-lg md:text-3xl font-bold">
-                    {selectedWorkshop.speakerName}
-                  </h3>
-                  <p className="text-primary text-sm md:text-xl">
-                    {selectedWorkshop.speakerRole}
-                  </p>
-                  <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
-                    {selectedWorkshop.speakerExpertise}
-                  </p>
-                </div>
+                <h3 className="text-xl md:text-2xl font-bold">
+                  {selectedWorkshop.speakerName}
+                </h3>
+                <p className="text-primary text-sm md:text-base">
+                  {selectedWorkshop.speakerRole}
+                </p>
+                <p className="text-xs md:text-sm text-gray-400 mt-1">
+                  {selectedWorkshop.speakerExpertise}
+                </p>
               </div>
 
-              {/* Right Part (3/5) */}
-              <div className="w-full md:w-3/5 p-3 md:p-12 flex flex-col gap-3 md:gap-8">
-                {/* Top: Workshop Name */}
-                <div>
-                  <h1 className="text-xl md:text-5xl p-2 font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-white/50 mb-2 md:mb-4 leading-tight">
-                    {selectedWorkshop.workshopName}
-                  </h1>
-                  <span className="text-white/30 font-mono text-[10px] md:text-sm border border-white/20 px-6 md:px-3 py-0.5 md:py-1 rounded-full">
+              {/* Right Part */}
+              <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col overflow-y-auto no-scrollbar">
+                <div className="flex-grow">
+                  <span className="text-white/50 font-mono text-xs border border-white/20 px-2 py-0.5 rounded-full">
                     TRACK: {selectedWorkshop.id}
                   </span>
-                </div>
-
-                {/* Bottom: Full Desc */}
-                <div className="prose prose-invert prose-sm md:prose-lg max-w-none">
-                  <p className="font-sans text-xs md:text-lg p-4 text-gray-300 leading-normal md:leading-loose">
+                  <h1 className="text-2xl md:text-4xl font-bold text-white mt-2 mb-4 leading-tight">
+                    {selectedWorkshop.workshopName}
+                  </h1>
+                  <p className="font-sans text-sm md:text-base text-gray-300 leading-relaxed">
                     {selectedWorkshop.fullDesc}
                   </p>
+                </div>
+                <div className="mt-6 text-center md:text-right">
+                  <button className="bg-primary text-white font-bold py-2 px-6 rounded-xl hover:bg-primary/80 transition-all duration-300 ">
+                    Register Now
+                  </button>
                 </div>
               </div>
             </div>

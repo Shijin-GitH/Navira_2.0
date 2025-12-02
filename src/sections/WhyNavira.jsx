@@ -45,7 +45,7 @@ export default function WhyNavira() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-4  px-8 lg:px-8 justify-items-center items-center w-fit ">
         {Data.map((item, index) => (
-          <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`} className={`size-70 bg-primary rounded-xl p-8 relative sm:even:top-10`}>
+          <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`} className={`size-70 bg-linear-to-br from-primary to-black shadow shadow-accent-1 rounded-xl p-8 relative sm:even:top-10`}>
             <div
               className={`flex flex-col `}>
               <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>

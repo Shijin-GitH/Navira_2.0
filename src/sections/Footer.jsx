@@ -126,7 +126,7 @@ const Footer = () => {
     >
       {/* Parallax Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-linear-to-t from-secondary via-secondary/90 to-transparent z-1"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-black/50 to-transparent z-1"></div>
 
         {/*moon*/}
         <img
@@ -167,9 +167,10 @@ const Footer = () => {
           <img
             src="/assets/logos/navira.webp"
             alt="Navira 2.0 Logo"
-            className="w-32 sm:w-40 md:w-44 lg:w-48 h-auto object-contain mx-auto"
+            className="w-32 sm:w-40 md:w-44 lg:w-48 h-auto object-contain mx-auto mb-2"
           />
         </a>
+        <div className="hidden sm:block w-24 md:w-28 h-px bg-linear-to-r from-transparent via-primary to-transparent"></div>
 
         <nav className="hidden sm:flex flex-wrap items-center justify-center gap-x-6 md:gap-x-8 gap-y-3 text-sm text-white/70">
           <a
@@ -216,7 +217,6 @@ const Footer = () => {
           </a>
         </nav>
 
-        <div className="hidden sm:block w-24 md:w-28 h-px bg-linear-to-r from-transparent via-primary to-transparent"></div>
 
         <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
           <a

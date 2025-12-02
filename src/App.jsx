@@ -15,13 +15,18 @@ import StaggeredMenu from "./components/Navbar.jsx";
 import Register from "./sections/Register.jsx";
 import Sponsors from "./sections/Sponsors.jsx";
 import Aos from "aos";
+import EventDetails from "./sections/EventDetails.jsx";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 // import "aos/dist/aos.css";
 
 const menuItems = [
-  { label: "Home", ariaLabel: "Go to home page", link: "/" },
-  { label: "About", ariaLabel: "Learn about us", link: "/about" },
-  { label: "Services", ariaLabel: "View our services", link: "/services" },
-  { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
+  { label: "Home", ariaLabel: "Go to home page", link: "#hero" },
+  { label: "About", ariaLabel: "Learn about us", link: "#about" },
+  { label: "Events", ariaLabel: "View our events", link: "#events" },
+  { label: "Glimpse", ariaLabel: "See a glimpse of Navira", link: "#glimpse" },
+  { label: "Workshops", ariaLabel: "Our Workshops", link: "#workshops" },
+  { label: "IV", ariaLabel: "Industrial Visits", link: "#iv" },
+  { label: "Register", ariaLabel: "Register for Navira", link: "#register" },
 ];
 
 const socialItems = [
@@ -30,12 +35,24 @@ const socialItems = [
   { label: "LinkedIn", link: "https://linkedin.com" },
 ];
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function App() {
   Aos.init();
   const scrollRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
+  const menuRef = useRef(null);
+
+  const handleNavClick = (link) => {
+    gsap.to(scrollRef.current, {
+      duration: 1.5,
+      scrollTo: { y: link, offsetY: 70 },
+      ease: "power4.inOut",
+    });
+    if (menuRef.current) {
+      menuRef.current.closeMenu();
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -88,8 +105,10 @@ function App() {
     <div
       ref={scrollRef}
       className="w-screen h-screen overflow-y-auto overflow-x-hidden"
-      style={{ margin: 0, padding: 0 }}>
+      style={{ margin: 0, padding: 0 }}
+    >
       <StaggeredMenu
+        ref={menuRef}
         position="right"
         items={menuItems}
         socialItems={socialItems}
@@ -104,22 +123,39 @@ function App() {
         onMenuOpen={() => console.log("Menu opened")}
         onMenuClose={() => console.log("Menu closed")}
         isFixed={true}
+        onNavItemClick={handleNavClick}
       />
       <div id="hero">
         <Hero />
       </div>
       <div className="flex flex-col gap-10 bg-secondary">
         <Countdown />
-        <About />
-        <Glimpse />
+        <div id="about">
+          <About />
+        </div>
+        <div id="events">
+          <EventDetails />
+        </div>
+        <div id="glimpse">
+          <Glimpse />
+        </div>
         <div className="flex flex-col gap-10 bg-secondary relative">
           <WhyNavira />
-          <Organizer />
-          <Sponsors />
-          <Workshops />
-          <IndustrialVisits />
-          <Register />
-          
+          <div id="organizer">
+            <Organizer />
+          </div>
+          <div id="sponsors">
+            <Sponsors />
+          </div>
+          <div id="workshops">
+            <Workshops />
+          </div>
+          <div id="iv">
+            <IndustrialVisits />
+          </div>
+          <div id="register">
+            <Register />
+          </div>
         </div>
       </div>
       <Footer />

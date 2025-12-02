@@ -16,7 +16,7 @@ function About() {
       <Heading mainTitle="About" highlightedTitle="Navira" />
 
       {/* Content Container */}
-      <div className="relative z-20 w-full max-w-6xl mx-auto">
+      <div className="font-semibold relative z-20 mt-6 w-full max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Side - Image with Enhanced Design */}
           <div className="w-full flex justify-center lg:justify-start order-2 lg:order-1">
