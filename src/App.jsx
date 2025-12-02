@@ -17,6 +17,7 @@ import Sponsors from "./sections/Sponsors.jsx";
 import Aos from "aos";
 import EventDetails from "./sections/EventDetails.jsx";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import Particles from "./components/Particles.jsx";
 // import "aos/dist/aos.css";
 
 const menuItems = [
@@ -113,42 +114,22 @@ function App() {
         socialItems={socialItems}
         onItemClick={handleNavClick}
         isFixed={true}
-        logoUrl = "/assets/logos/navira_logo.webp"
+        logoUrl="/assets/logos/navira_logo.webp"
       />
-      <div id="hero">
-        <Hero />
-      </div>
-      <div className="flex flex-col gap-10 bg-secondary">
+      <Hero />
+      <div className="relative bg-secondary">
         <Countdown />
-        <div id="about">
-          <About />
-        </div>
-        <div id="events">
-          <EventDetails />
-        </div>
-        <div id="glimpse">
-          <Glimpse />
-        </div>
-        <div className="flex flex-col gap-10 bg-secondary relative">
-          <WhyNavira />
-          <div id="organizer">
-            <Organizer />
-          </div>
-          <div id="sponsors">
-            <Sponsors />
-          </div>
-          <div id="workshops">
-            <Workshops />
-          </div>
-          <div id="iv">
-            <IndustrialVisits />
-          </div>
-          <div id="register">
-            <Register />
-          </div>
-        </div>
+        <About />
+        <EventDetails />
+        <Glimpse />
+        <WhyNavira />
+        <Organizer />
+        <Sponsors />
+        <Workshops />
+        <IndustrialVisits />
+        <Register />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

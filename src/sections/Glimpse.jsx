@@ -3,7 +3,7 @@ import Heading from "../components/Heading";
 
 export default function Glimpse() {
   return (
-    <div className="flex flex-col gap-10 items-center justify-center">
+    <div id="glimpse" className="flex flex-col gap-10 items-center justify-center">
       <Heading mainTitle="GLIMPSES OF" highlightedTitle="NAVIRA" />
       <div className="flex flex-col ">
         <Marquee>

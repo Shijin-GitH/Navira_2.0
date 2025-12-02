@@ -61,7 +61,7 @@ function Workshops() {
 
   return (
     <>
-      <section className="w-full ">
+      <section id="workshops" className="w-full ">
         <div className="w-[90vw] max-w-7xl flex-col flex gap-10 m-auto text-white py-20">
           <Heading mainTitle="Workshops" highlightedTitle="" />
           <div className="flex flex-col md:flex-row w-full gap-8 justify-center">

@@ -4,7 +4,7 @@ import Heading from "../components/Heading.jsx";
 
 function About() {
   return (
-    <div className="relative w-full min-h-[70vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div id="about" className="relative w-full min-h-[70vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-32 h-32 border border-primary/20 rounded-full"></div>

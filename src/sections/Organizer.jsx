@@ -18,7 +18,7 @@ export default function Organizer() {
 
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen p-10 py-14 h-fit">
+    <div id="organizer" className="flex flex-col items-center justify-center w-screen p-10 py-14 h-fit">
       <div className="flex flex-col justify-center w-full mb-20">
         <Heading mainTitle="Organizers" highlightedTitle="" />
       </div>

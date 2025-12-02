@@ -25,7 +25,7 @@ export default function Register() {
   ];
 
   return (
-    <div className="flex flex-col gap-3 items-center justify-center text-white py-20">
+    <div id="register" className="flex flex-col gap-3 items-center justify-center text-white py-20">
       <div className="flex flex-col p-8 lg:p-10 ">
         <Heading mainTitle="Register" highlightedTitle="Now" />
       </div>
