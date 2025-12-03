@@ -43,7 +43,7 @@ function SponsorCard({ sponsor, subtitle = "Ticketing Partner", logoSrc }) {
 export default function Sponsors() {
   // Example data; replace with real sponsors when available
   const sponsors = [
-    { name: "Snaptiqs", subtitle: "Ticketing Partner" , logo: "/assets/logos/sponsors/snaptics.png"},
+    { name: "Snaptiqz", subtitle: "Ticketing Partner" , logo: "/assets/logos/sponsors/snaptics.png"},
 
   ];
 
@@ -54,7 +54,7 @@ export default function Sponsors() {
       <div className="w-full px-4">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col items-center p-6 sm:p-8 lg:p-10">
-            <Heading mainTitle="Our" highlightedTitle="Sponsors" />
+            <Heading mainTitle="Our" highlightedTitle="Partners" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 sm:gap-12">

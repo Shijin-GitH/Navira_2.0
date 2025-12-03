@@ -5,38 +5,38 @@ const workshopsData = [
   {
     id: "01",
     workshopName: "Introduction to DevOps",
-    speakerName: "Dr. Raghu C. V",
-    speakerRole: "Asst. Professor",
-    speakerExpertise: "Dept. of Electronics and Communication, NIT Calicut",
-    speakerImage: "/assets/images/navira.jpeg",
+    speakerName: "Mr. Basil Reji",
+    speakerRole: "DevOps Engineer",
+    speakerExpertise: "Qburst Technologies",
+    speakerImage: "/assets/Speakers/spk1.jpg",
     shortDesc:
       "This workshop introduces the core principles of DevOps, focusing on collaboration, automation, and continuous delivery. ",
     fullDesc:
-      "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. Sensor integration and IoT development has the potential to transform industries by connecting physical devices to the digital world. Sensors gather real-time data and IoT platforms enable this data to be transmitted, analyzed, and processed using the internet. This integration paves opportunity for automation, improved efficiency and decision-making across various applications including industrial automation, healthcare, and agriculture. The workshop on Sensor Integration and IoT Development by Navira offers an opportunity to enhance skills in sensor integration and IoT solution development. The session will be handled by Dr. Raghu C. V, Asst. Professor, Dept. of Electronics and Communication, NIT Calicut.",
+      " This workshop introduces the core principles of DevOps, focusing on collaboration, automation, and continuous delivery. Participants gain hands-on experience with CI/CD pipelines, containerization, and cloud deployment, preparing them to build faster and more reliable software systems aligned with industry practices.",
   },
   {
     id: "02",
-    workshopName: "Drone Technology and Applications",
-    speakerName: "Dr. Raghu C. V",
-    speakerRole: "Asst. Professor",
-    speakerExpertise: "Dept. of Electronics and Communication, NIT Calicut",
-    speakerImage: "/assets/images/navira.jpeg",
+    workshopName: "Embedded Systems: Theory to Practical Architecture",
+    speakerName: "Mr. Ashwin U P",
+    speakerRole: "Design Engineer(SW)",
+    speakerExpertise: "Digital Core Technologies Pvt Ltd",
+    speakerImage: "/assets/Speakers/spk2.jpg",
     shortDesc:
-      "This workshop provides hands-on experience in drone design, flight control, and navigation, while exploring real-world applications in various fields.",
+      "This workshop introduces embedded systems through a blend of core theory and practical architecture. It equips learners with microcontroller basics, system design insights, and real-time implementation skills.",
     fullDesc:
-      "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. Sensor integration and IoT development has the potential to transform industries by connecting physical devices to the digital world. Sensors gather real-time data and IoT platforms enable this data to be transmitted, analyzed, and processed using the internet. This integration paves opportunity for automation, improved efficiency and decision-making across various applications including industrial automation, healthcare, and agriculture. The workshop on Sensor Integration and IoT Development by Navira offers an opportunity to enhance skills in sensor integration and IoT solution development. The session will be handled by Dr. Raghu C. V, Asst. Professor, Dept. of Electronics and Communication, NIT Calicut.",
+      "This workshop introduces embedded systems through a blend of core theory and practical architecture. It equips learners with microcontroller basics, system design insights, and real-time implementation skills.",
   },
   {
     id: "03",
     workshopName: "AC to DC Conversion Techniques",
-    speakerName: "Dr. Raghu C. V",
-    speakerRole: "Asst. Professor",
-    speakerExpertise: "Dept. of Electronics and Communication, NIT Calicut",
-    speakerImage: "/assets/images/navira.jpeg",
+    speakerName: "Mr. Nithin Mathew Joji",
+    speakerRole: "R & D Engineer",
+    speakerExpertise: "SolarBase",
+    speakerImage: "/assets/Speakers/spk3.jpg",
     shortDesc:
       "This workshop covers the fundamentals of converting AC power to DC using rectifiers and power converters.",
     fullDesc:
-      "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. Sensor integration and IoT development has the potential to transform industries by connecting physical devices to the digital world. Sensors gather real-time data and IoT platforms enable this data to be transmitted, analyzed, and processed using the internet. This integration paves opportunity for automation, improved efficiency and decision-making across various applications including industrial automation, healthcare, and agriculture. The workshop on Sensor Integration and IoT Development by Navira offers an opportunity to enhance skills in sensor integration and IoT solution development. The session will be handled by Dr. Raghu C. V, Asst. Professor, Dept. of Electronics and Communication, NIT Calicut.",
+      "This workshop covers the fundamentals of converting AC power to DC using rectifiers and power converters. Through practical circuit sessions, participants learn how AC-to-DC systems support everyday electronics, renewable energy, and industrial applications—strengthening core electrical engineering skills.",
   },
 ];
 
@@ -72,8 +72,8 @@ function Workshops() {
                 data-aos-delay={`${index * 100}`}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                className="group relative w-[70%] md:w-1/3 h-[75vw] md:h-[30vw] m-auto md:m-0 rounded-xl md:rounded-3xl overflow-hidden cursor-pointer border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,255,255,0.15)] hover:border-white/40 active:shadow-[0_0_50px_rgba(255,255,255,0.15)] active:border-white/40"
-                // onClick={() => setSelectedWorkshop(workshop)}
+                className="group relative w-[70%] md:w-1/3 h-[75vw] md:h-[30vw] md:min-h-[500px] m-auto md:m-0 rounded-xl md:rounded-3xl overflow-hidden cursor-pointer border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,255,255,0.15)] hover:border-white/40 active:shadow-[0_0_50px_rgba(255,255,255,0.15)] active:border-white/40"
+                onClick={() => setSelectedWorkshop(workshop)}
               >
                 {/* Spotlight Effect */}
                 <div
@@ -221,11 +221,11 @@ function Workshops() {
                     {selectedWorkshop.fullDesc}
                   </p>
                 </div>
-                <div className="mt-6 text-center md:text-right">
+                {/* <div className="mt-6 text-center md:text-right">
                   <button className="bg-primary text-white font-bold py-2 px-6 rounded-xl hover:bg-primary/80 transition-all duration-300 ">
                     Register Now
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
