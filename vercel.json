@@ -1,0 +1,18 @@
+{
+  "redirects": [
+    {
+      "source": "/volunteer_call",
+      "destination": "https://forms.gle/1T2Zer7Zw9uTRk7x9",
+      "permanent": false
+    },
+    {
+      "source":"/campus_ambassador",
+      "destination":"https://docs.google.com/forms/d/e/1FAIpQLSdF3wI_wVvop5l2_56Y7ek8psruvkdiERsvhYYXGH8hZuxSdQ/viewform?usp=header",
+      "permanent": false
+    }
+
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
