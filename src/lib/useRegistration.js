@@ -7,7 +7,7 @@ export const useRegistration = () => {
 
     if (now < registrationOpenDate) {
       if (e) e.preventDefault();
-      toast.error("Early Bird Registration Closed! Registrations will open soon!", {
+      toast.error("Early Bird Registration Closed! Normal Registrations will open soon!", {
         position: "top-right",
       });
       return false;
