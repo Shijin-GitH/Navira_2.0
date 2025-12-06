@@ -4,7 +4,7 @@ import Heading from "../components/Heading";
 export default function Countdown() {
   // Change this to your target end date/time (ISO or epoch millis)
   const END_TIME = useMemo(
-    () => new Date("2025-12-31T23:59:59Z").getTime(),
+    () => new Date("2026-01-10T09:00:00Z").getTime(),
     []
   );
 
