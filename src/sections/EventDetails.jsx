@@ -29,18 +29,18 @@ const EventDetails = () => {
         </div>
 
         <div className="mt-16">
-          <div>
+          {/* <div>
             <Heading mainTitle={"DATE"} />
             <div className="mt-6">
               <EventDate />
             </div>
-          </div>
-          <div className="mt-16">
+          </div> */}
+          {/* <div className="mt-16">
             <Heading mainTitle={"VENUE"} />
             <div className="mt-6">
               <VenueCard {...venue} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
