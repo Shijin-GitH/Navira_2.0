@@ -111,7 +111,7 @@ function App() {
       />
       <Hero />
       <div className="relative bg-secondary">
-        <Countdown />
+        {/* <Countdown /> */}
         <About />
         <EventDetails />
         <Glimpse />
@@ -120,7 +120,7 @@ function App() {
         <Sponsors />
         <Workshops />
         <IndustrialVisits />
-        <Register />
+        {/* <Register /> */}
         <Footer />
       </div>
     </div>
