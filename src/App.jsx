@@ -111,7 +111,7 @@ function App() {
       />
       <Hero />
       <div className="relative bg-secondary">
-        {/* <Countdown /> */}
+        <Countdown />
         <About />
         <EventDetails />
         <Glimpse />
