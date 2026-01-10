@@ -29,18 +29,18 @@ const EventDetails = () => {
         </div>
 
         <div className="mt-16">
-          {/* <div>
+          <div>
             <Heading mainTitle={"DATE"} />
             <div className="mt-6">
               <EventDate />
             </div>
-          </div> */}
-          {/* <div className="mt-16">
+          </div>
+          <div className="mt-16">
             <Heading mainTitle={"VENUE"} />
             <div className="mt-6">
               <VenueCard {...venue} />
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
@@ -58,11 +58,11 @@ const EventDate = () => (
   <div className="bg-secondary/50 border border-accent-1/50 p-8 rounded-lg text-center shadow-md transition-all duration-300 hover:shadow-primary/20 hover:border-primary/30">
     <div className="flex justify-center items-baseline space-x-8">
       <div className="text-center">
-        <p className="font-teko text-9xl text-primary leading-none">10</p>
+        <p className="font-teko text-9xl text-primary leading-none">17</p>
       </div>
       <span className="font-oswald text-6xl text-accent-1/50">&</span>
       <div className="text-center">
-        <p className="font-teko text-9xl text-primary leading-none">11</p>
+        <p className="font-teko text-9xl text-primary leading-none">18</p>
       </div>
     </div>
     <p className="font-oswald text-5xl text-accent-1 mt-4">JANUARY 2026</p>
